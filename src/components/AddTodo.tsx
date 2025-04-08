@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { useTodo } from "../contexts/TodoContext"
 import { nanoid } from "nanoid"
+import { useTodoStore } from "../contexts/todoStore"
 
 function AddTodo() {
    const [todo, setTodo] = useState("")
-   const { addTodo } = useTodo()
+   const addTodo = useTodoStore((store) => store.addTodo)
 
    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()

@@ -1,6 +1,6 @@
 import { Todo } from "../types"
-import { useTodo } from "../contexts/TodoContext"
 import { useEffect, useRef, useState } from "react"
+import { useTodoStore } from "../contexts/todoStore"
 
 type TodoItemProps = {
    todo: Todo
@@ -31,7 +31,9 @@ function TodoItem({ todo }: TodoItemProps) {
       })
    }, [isEditing, todo])
 
-   const { updateTodo, removeTodo, toggleTodo } = useTodo()
+   const updateTodo = useTodoStore((store) => store.updateTodo)
+   const removeTodo = useTodoStore((store) => store.removeTodo)
+   const toggleTodo = useTodoStore((store) => store.toggleTodo)
 
    return (
       <div
