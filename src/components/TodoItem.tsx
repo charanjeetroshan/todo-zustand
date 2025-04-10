@@ -1,6 +1,7 @@
 import { Todo } from "../types"
 import { useEffect, useRef, useState } from "react"
 import { useTodoStore } from "../contexts/todoStore"
+import { useShallow } from "zustand/shallow"
 
 type TodoItemProps = {
    todo: Todo
@@ -31,9 +32,13 @@ function TodoItem({ todo }: TodoItemProps) {
       })
    }, [isEditing, todo])
 
-   const updateTodo = useTodoStore((store) => store.updateTodo)
-   const removeTodo = useTodoStore((store) => store.removeTodo)
-   const toggleTodo = useTodoStore((store) => store.toggleTodo)
+   const { updateTodo, removeTodo, toggleTodo } = useTodoStore(
+      useShallow((store) => ({
+         updateTodo: store.updateTodo,
+         removeTodo: store.removeTodo,
+         toggleTodo: store.toggleTodo,
+      })),
+   )
 
    return (
       <div
