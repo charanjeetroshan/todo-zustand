@@ -11,7 +11,10 @@
       "format": "prettier 'src/**/*.{js,ts,mjs,cjs,json}' --write"
    },
    "dependencies": {
+      "@chakra-ui/react": "^3.22.0",
+      "@emotion/react": "^11.14.0",
       "nanoid": "^5.1.5",
+      "next-themes": "^0.4.6",
       "react": "^18.3.1",
       "react-dom": "^18.3.1",
       "react-icons": "^5.5.0",
@@ -32,7 +35,8 @@
       "prettier": "^3.5.3",
       "tailwindcss": "^3.4.17",
       "typescript": "^5.8.3",
-      "vite": "^5.4.17"
+      "vite": "^5.4.17",
+      "vite-tsconfig-paths": "^5.1.4"
    },
    "pnpm": {
       "onlyBuiltDependencies": [
