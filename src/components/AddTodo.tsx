@@ -11,7 +11,7 @@ function AddTodo() {
       if (!todo) {
          return
       }
-      addTodo({ id: nanoid(), todoMessage: todo, isCompleted: false })
+      addTodo({ id: nanoid(), todoMessage: todo })
       setTodo("")
    }
 

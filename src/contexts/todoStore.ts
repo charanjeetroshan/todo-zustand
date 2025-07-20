@@ -20,7 +20,7 @@ const todoStore: StateCreator<TodoStore> = (set) => ({
    updateTodo: (todoId, todoMessage) => {
       set((state) => ({
          todos: state.todos.map((todo) =>
-            todo.id === todoId ? { ...todo, todoMessage: todoMessage } : todo,
+            todo.id === todoId ? { ...todo, todoMessage: todoMessage, isEdited: true } : todo,
          ),
       }))
    },
